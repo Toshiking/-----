@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>勤怠アプリ</title>
+    </head>
+    
+    <body>
+        <div> 
+            <h1> 勤怠作成アプリ </h1>
+        </div>
+        <div id = 'target'>
+
+            <div >
+                <form method="post" name="FF" >
+                    <input type="time" name = "start_time" onChange = "calc()">
+                    <input type="time" name = "end_time" onChange = "calc()">
+                    <input type="text" name="name" list="example"><input type="text">
+                    <input type="text" name="RS">
+                </form>
+            </div>
+        </div>
+        <button id="add">作業内容を追加する</button>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+    <datalist id="example">
+        <option value="サンプル1"></option>
+        <option value="サンプル2"></option>
+        <option value="サンプル3"></option>
+        </datalist>
+</html>
