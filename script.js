@@ -29,12 +29,14 @@ function createDailyReport(){
     output.innerHTML += '<b>【業務内容】</b><br>';
     output.innerHTML += work_content.value.split("\n").join("<br>");
     output.innerHTML += '<br><br><b>【本日の業務の流れ】</b><br>';
-    let form_list = flow.getElementsByTagName('tr')
-    for(let i = 0;i < form_list.length;i++)
-        var data = form_list[i].getElementsByTagName('td')
-        console.log(data[0].children)
-        output.innerHTML += '[' + data[0].children[0].value + ' - ' +data[1].children[0].value +']　【'+data[2].children[0].value +'】'+data[3].children[0].value +'<br>'  ;
+    let form_list = flow.getElementsByTagName('tr');
     
+    for(let i = 0;i < form_list.length;i++){
+        console.log(form_list[i])
+        var data = form_list[i].getElementsByTagName('td')
+        //console.log(data[0].children)
+        output.innerHTML += '[' + data[0].children[0].value + ' - ' +data[1].children[0].value +']　【'+data[2].children[0].value +'】'+data[3].children[0].value +'<br>'  ;
+    }
     output.innerHTML += '<br><br><b>【今後のTODO】</b><br>';
     output.innerHTML += schedule.value.split("\n").join("<br>");
     
