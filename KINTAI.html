@@ -9,23 +9,49 @@
         <div> 
             <h1> 勤怠作成アプリ </h1>
         </div>
-        <div id = 'target'>
-
-            <div >
-                <form method="post" name="FF" >
-                    <input type="time" name = "start_time" onChange = "calc()">
-                    <input type="time" name = "end_time" onChange = "calc()">
-                    <input type="text" name="name" list="example"><input type="text">
-                    <input type="text" name="RS">
-                </form>
-            </div>
+        <div>
+            <h3>業務内容</h3>
+        </div>
+        <div id = 'work_content_area'>
+            <form method ="post" name = 'content'>
+                <textarea id = 'work_content' name = "work_explain">業務内容を記述してください</textarea>
+            </form>
+        </div>
+        <div>
+            <h3>本日の業務の流れ</h3>
+        </div>
+        <div id = 'flow'>
+            <form method="post" name="FF" >
+                <input type="time" name = "start_time" onChange = "calc(this.form)">
+                <input type="time" name = "end_time" onChange = "calc(this.form)">
+                <input type="text" name="work_tag" list="example"><input type="work_explain">
+                <output type="text" name="time_required">
+            </form>
         </div>
         <button id="add">作業内容を追加する</button>
+        
+        <div>
+            <h3>今後の予定</h3>
+        </div>
+        <div id = 'schedule_area'>
+            <form method ="post" name = 'content'>
+                <textarea id='schedule' name = "explain">今後の予定を記述してください</textarea>
+            </form>
+        </div>
+        
+        
+        <button id="create">日報を出力する</button>
+        <div id = 'output'>
+            
+        </div>
         <script type="text/javascript" src="script.js"></script>
     </body>
     <datalist id="example">
-        <option value="サンプル1"></option>
-        <option value="サンプル2"></option>
-        <option value="サンプル3"></option>
-        </datalist>
+        <option value="ナレッジ"></option>
+        <option value="コンペ"></option>
+        <option value="ブログ"></option>
+        <option value="研修"></option>
+        <option value="人事関連面談"></option>
+        <option value="全社共通"></option>
+    </datalist>
 </html>
