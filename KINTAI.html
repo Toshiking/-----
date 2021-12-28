@@ -7,41 +7,55 @@
     
     <body>
         <div> 
-            <h1> 勤怠作成アプリ </h1>
+            <h1> 勤怠作成アプリ  Ver1.0</h1>
         </div>
         <div>
             <h3>業務内容</h3>
         </div>
         <div id = 'work_content_area'>
-            <form method ="post" name = 'content'>
-                <textarea id = 'work_content' name = "work_explain">業務内容を記述してください</textarea>
-            </form>
+            <textarea id = 'work_content' name = "work_explain" placeholder="業務内容を記述してください"></textarea>            
         </div>
         <div>
             <h3>本日の業務の流れ</h3>
         </div>
-        <div id = 'flow'>
-            <form method="post" name="FF" >
-                <input type="time" name = "start_time" onChange = "calc(this.form)">
-                <input type="time" name = "end_time" onChange = "calc(this.form)">
-                <input type="text" name="work_tag" list="example"><input type="work_explain">
-                <output type="text" name="time_required">
-            </form>
-        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>開始時刻</th>
+                <th>終了時刻</th>
+                <th>カテゴリ</th>
+                <th>説明</th>
+                <th>作業時間</th>
+            </tr>
+            </thead>
+            <tbody id = 'flow'>
+                <div>
+                    <tr>
+                        <td><input type="time" name = "start_time" onChange = "calc(this.parentElement.parentElement.children)"></td>
+                        <td><input type="time" name = "end_time" onChange = "calc(this.parentElement.parentElement.children)"></td>
+                        <td><input type="text" name="work_tag" list="example"></td>
+                        <td><input type="work_explain"></td>
+                        <td><input type="time" readonly name="time_required" value="00:00"></td>
+                    </tr>
+                </div>
+            </tbody>
+            
+        </table>
         <button id="add">作業内容を追加する</button>
         
         <div>
             <h3>今後の予定</h3>
         </div>
         <div id = 'schedule_area'>
-            <form method ="post" name = 'content'>
-                <textarea id='schedule' name = "explain">今後の予定を記述してください</textarea>
-            </form>
+            <textarea id='schedule' name = "explain" placeholder="今後の予定を記述してください"></textarea>
         </div>
         
         
         <button id="create">日報を出力する</button>
         <div id = 'output'>
+            
+        </div>
+        <div id = 'output_wt'>
             
         </div>
         <script type="text/javascript" src="script.js"></script>
@@ -54,4 +68,5 @@
         <option value="人事関連面談"></option>
         <option value="全社共通"></option>
     </datalist>
+    <small>©Toshiking</small>
 </html>
