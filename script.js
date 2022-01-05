@@ -63,8 +63,8 @@ function createWorkTime(){
         wt_dict[form_list[i].getElementsByTagName('td')[2].children[0].value] += transStr2Min(form_list[i].getElementsByTagName('td')[4].children[0].value);
     }
     for(i=0; i < keylist.length;i++){
-        hour = Math.floor(wt_dict[form_list[i].getElementsByTagName('td')[2].children[0].value]/60)
-        min = wt_dict[form_list[i].getElementsByTagName('td')[2].children[0].value]%60
+        hour = Math.floor(wt_dict[keylist[i]]/60)
+        min = wt_dict[keylist[i]]%60
         output.innerHTML += keylist[i] +'　' +('00' + hour).slice(-2) +":" + ('00' + min).slice(-2)+'<br>';
     }
 
